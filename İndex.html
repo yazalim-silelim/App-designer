@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>App Designer - İndir</title>
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1724;color:#fff;line-height:1.5}
+    header{background:#1e293b;padding:20px;text-align:center}
+    header h1{margin:0;font-size:24px}
+    main{max-width:800px;margin:20px auto;padding:0 16px}
+    .card{background:#1e293b;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .card h2{margin-top:0}
+    .desc{color:#94a3b8;font-size:15px;margin:10px 0}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    a.button{background:#06b6d4;color:#021226;border:none;border-radius:8px;padding:10px 14px;font-weight:600;text-decoration:none;cursor:pointer;transition:0.2s}
+    a.button:hover{opacity:0.85}
+    .ghost{background:transparent;color:#94a3b8;border:1px solid #334155}
+    footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
+    .versions{margin-top:10px}
+    .versions h3{margin:0 0 10px;font-size:18px}
+    .ver-list{list-style:none;padding:0;margin:0}
+    .ver-list li{margin:6px 0}
+    .ver-list a{color:#06b6d4;text-decoration:none;font-weight:500}
+    .ver-list a:hover{text-decoration:underline}
+    .lang-select{margin:20px auto;text-align:center}
+    select{padding:8px 12px;border-radius:6px;border:none;background:#1e293b;color:#fff}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>App Designer</h1>
+    <p id="subtitle">Resmî indirme sayfası</p>
+  </header>
+
+  <div class="lang-select">
+    <label for="lang">🌐 Dil: </label>
+    <select id="lang">
+      <option value="tr">Türkçe</option>
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+
+  <main>
+    <!-- Türkçe -->
+    <div class="card lang lang-tr">
+      <h2>App Designer</h2>
+      <p class="desc">Bu uygulamada uygulama tasarlayabilirsiniz. Şu anlık İngilizce ama Türkçe sürümü yakında gelecektir.</p>
+      <div class="actions">
+        <a href="https://seninsiten.com/dosyalar/uygulama-1.1.0.apk" class="button">Son Sürümü İndir</a>
+        <a href="#surumler-tr" class="button ghost">Tüm Sürümler</a>
+      </div>
+      <div id="surumler-tr" class="versions">
+        <h3>Tüm Sürümler</h3>
+        <ul class="ver-list">
+          <li><a href="">Yakında</a></li>
+          <li><a href="">Yakında</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="card lang lang-en" style="display:none;">
+      <h2>App Designer</h2>
+      <p class="desc">With this app, you can design your own apps. Currently only available in English.</p>
+      <div class="actions">
+        <a href="https://seninsiten.com/dosyalar/app-1.3.0.apk" class="button">Download Latest</a>
+        <a href="#surumler-en" class="button ghost">All Versions</a>
+      </div>
+      <div id="surumler-en" class="versions">
+        <h3>All Versions</h3>
+        <ul class="ver-list">
+          <li><a href="">Soon</a></li>
+          <li><a href="">Soon</a></li>
+          <li><a href="">Soon</a></li>
+          <li><a href="https://seninsiten.com/dosyalar/app-1.0.0.apk">v1.0.0</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Deutsch -->
+    <div class="card lang lang-de" style="display:none;">
+      <h2>App Designer</h2>
+      <p class="desc">Mit dieser App können Sie eigene Apps entwerfen. Nur eine Version ist verfügbar.</p>
+      <div class="actions">
+        <a href="https://seninsiten.com/dosyalar/app-de-1.0.0.apk" class="button">Neueste Version</a>
+      </div>
+      <div id="surumler-de" class="versions">
+        <h3>Alle Versionen</h3>
+        <ul class="ver-list">
+          <li><a href="">Bald</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 App Designer. Tüm hakları saklıdır.
+  </footer>
+
+  <script>
+    const langSelect = document.getElementById('lang');
+    const langCards = document.querySelectorAll('.lang');
+    langSelect.addEventListener('change', () => {
+      langCards.forEach(card => card.style.display = 'none');
+      document.querySelector('.lang-' + langSelect.value).style.display = 'block';
+    });
+  </script>
+</body>
+</html>
